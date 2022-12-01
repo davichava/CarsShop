@@ -1,0 +1,110 @@
+<h1 class="container" style="color: black;">Products</h1>
+
+<div class="container">
+    <div class="col mt-1">
+        <div class="row row-lg-3">
+            <div class="card shadow rounded m-2"  style="width: 20rem; text-align: center;" *ngFor="let product of product">
+                <div class="card-body">
+                    <h3>
+                        <h3 style="color: black;" [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+                            {{ product.name }}
+                        </h3>
+                        <h3 style="color: black;">{{ product.price | currency }}</h3>
+                    </h3>
+                    <!-- <a (click)="addToCart(product)" [routerLink]="['/Details']">
+                        <img src="/assets/imagenes/Redmi.jpg" alt="" width="270px" height="200px" style="display: flex;">
+                        buy
+                    </a> -->
+                    <a (click)="addToCart(product)" [routerLink]="['/cart']">
+                        <img src="assets/imagenes/{{product.img}}" alt="aca va la imagen" width="250px" height="200px">                        
+                    </a>                  
+
+                    <p style="color: black;" *ngIf="product.description">
+                        {{product.description}}
+                    </p>
+                    <td class="card-body" style="display: inline-block;">
+                        <button (click)="share()">
+                            Share
+                        </button>
+                    </td>
+
+                    <app-product-alerts [product]="product" (notify)="onNotify()">
+                    </app-product-alerts>
+
+                </div>
+            </div>
+        </div>
+        <a id="BackToTop" href="" style="display: inline; width: 30px; height: 50x; ;">
+             <span style="color: white;"[routerLink]="['/Product']">^</span>
+        </a>
+        <!-- <a class="mg_scroll-to-top" href="" style="display: inline;">
+            <i class="fas fa-chevron-up">
+                -
+            </i>
+        </a> -->
+    </div>
+</div>
+
+<!-- <div>
+    <mat-card>
+        <mat-card-title>Actions Buttons</mat-card-title>
+        <mat-card-subtitle>Start</mat-card-subtitle>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+      <br>
+      <mat-card>
+        <mat-card-title>Actions Buttons</mat-card-title>
+        <mat-card-subtitle>End</mat-card-subtitle>
+        <mat-card-actions align="end">
+          <button mat-button>Like</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+</div> -->
+
+<!-- <div *ngFor="let product of product">
+    <h3>
+        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+            {{ product.name }}
+        </a>
+    </h3>
+
+    <p *ngIf="product.description">
+        Description:{{product.description}}
+    </p>
+
+    <button (click)="share()">
+        Share
+    </button>
+
+    <app-product-alerts [product]="product" (notify)="onNotify()">
+    </app-product-alerts>
+
+</div> -->
+<!-- <div class="container">
+    <div class="row row-lg-3">
+        <div class="col">
+            <div class="col" *ngFor="let product of product">
+                <div class="col">
+                    <h3>
+                        <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]">
+                            {{ product.name }}
+                        </a>
+                    </h3>
+                    <p *ngIf="product.description">
+                        Description:{{product.description}}
+                    </p>
+                    <button (click)="share()">
+                        Share
+                    </button>
+
+                    <app-product-alerts [product]="product" (notify)="onNotify()">
+                    </app-product-alerts>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

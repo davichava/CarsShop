@@ -1,0 +1,36 @@
+ <h3 class="container"> Shiping Prices </h3>
+
+<div class="container">
+    <div class="col">
+        <div class="row row-lg-3">
+            <div class="card" style="width: 20rem;" class="shipping-items"
+                *ngFor="let shipping of shippingCosts | async">
+                <div class="card-body">
+                    <h3>{{ shipping.type }}</h3>
+                    <h3>{{ shipping.price | currency }}</h3>
+                    <button (click)="addToShippingPrice(shipping)" [routerLink]="['/cart']">
+                        Comfirm
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- *ngFor="let shipping of shippings | async" -->
+
+<!-- <div class="container">
+    <div class="col"></div>
+    <div class="row row-lg-3">
+        <div class="card-body">
+            <div class="card" style="width: 20rem;" class="shipping-items" *ngFor="let shipping of shippings | async">
+                <div class="card-body">
+                    <h3>{{ shipping.type }} </h3>
+                    <h3>{{ shipping.price | currency }} </h3>
+                    <button (click)="addToShipping(shipping)" [routerLink]="['/cart']">
+                        Atras
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+

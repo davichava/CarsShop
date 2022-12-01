@@ -1,0 +1,5 @@
+<div class="card-body" style="display: inline-table;">
+  <p *ngIf="product && product.price > 700">
+    <button (click)="notify.emit()">Notify Me</button>
+  </p>
+</div>

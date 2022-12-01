@@ -1,0 +1,39 @@
+<h3>Cart</h3>
+
+<p>
+    <a [routerLink]="['/shipping/:shppingId']">
+        <h4>Shiping Cost</h4>
+    </a>
+</p>
+
+<div class="cart-item" *ngFor="let item of items">
+    <span>{{ item.name}}</span>
+    <span>{{ item.price | currency}}</span>
+    <button type="button" class="btn btn-danger" (click)="deleteCart()"[routerLink]="['/']">Delete</button>
+</div>
+
+<div class="cart-item" *ngFor="let item of item">
+    <span>{{ item.type}}</span>
+    <span>{{ item.price | currency}}</span>
+    <button type="button" class="btn btn-danger" (click)="deleteShipping()" [routerLink]="['/shipping/:shppingId']">Delete</button>
+</div>
+
+<div class="container">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+        <div>
+            <label for="name">
+                <input id="name" type="text" formControlName="name" placeholder="Name">
+            </label>
+        </div>
+
+        <div>
+            <label for="email">
+                <input type="email" id="email" formControlName="name" placeholder="email">
+            </label>
+        </div>
+        //ponerle funcion para que envie el correo
+        <button class="button" type="submit">Purchese</button>
+        <button class="button" type="submit" [routerLink]="['/']">atras</button>
+    </form>
+</div>
