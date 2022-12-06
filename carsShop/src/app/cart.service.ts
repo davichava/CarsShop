@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Product } from './products';
-import { ShippingComponent } from './shipping/shipping.component';
-import { Shipping, shippings } from './shippings';
+import { Shipping } from './shippings';
 @Injectable({
   providedIn: 'root'
 })
@@ -31,6 +30,7 @@ export class CartService {
   deleteCart(product: Product): void {
     this.deleteCart(product);
   }
+
   // ----------------------------------
 
   //items for shippings price

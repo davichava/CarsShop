@@ -17,8 +17,12 @@
     <span>{{ item.price | currency}}</span>
     <button type="button" class="btn btn-danger" (click)="deleteShipping()" [routerLink]="['/shipping/:shppingId']">Delete</button>
 </div>
+    <button type="button" class="btn btn-info" [routerLink]="['/enviocorreo']">Busy</button>
+<div>
 
-<div class="container">
+</div>
+
+<!-- <div class="container">
     <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
 
         <div>
@@ -36,4 +40,4 @@
         <button class="button" type="submit">Purchese</button>
         <button class="button" type="submit" [routerLink]="['/']">atras</button>
     </form>
-</div>
+</div> -->

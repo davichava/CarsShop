@@ -12,9 +12,11 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
 import { CartComponent } from './cart/cart.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EnvioCorreoComponent } from './envio-correo/envio-correo.component';
 
 //Import angular material
 import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import {MatCardModule} from '@angular/material/card';
     ProductDetailsComponent,
     CartComponent,
     ShippingComponent,
+    EnvioCorreoComponent,   
     // MatCardModule
     
   ],
@@ -32,12 +35,14 @@ import {MatCardModule} from '@angular/material/card';
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       // { path: 'products/:productId', component: ProductDetailsComponent },
       { path: 'cart', component: CartComponent},
       { path: 'shipping/:shppingId', component: ShippingComponent},
-      { path: 'products/:productId', component: ProductListComponent}
+      { path: 'products/:productId', component: ProductListComponent},
+      { path: 'enviocorreo', component: EnvioCorreoComponent}
     ]),
     BrowserAnimationsModule
   ],

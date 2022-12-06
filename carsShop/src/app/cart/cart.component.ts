@@ -15,10 +15,10 @@ export class CartComponent implements OnInit {
   //para almacenar el precio del envio al carro
   item = this.cartService.getItem();
 
-  checkoutForm = this.formBuilder.group({
-    name: '',
-    address: ''
-  });
+  // checkoutForm = this.formBuilder.group({
+  //   name: '',
+  //   address: ''
+  // });
   //product:Product
   deleteCart():void{
     console.log('delete Cart');
@@ -33,12 +33,12 @@ export class CartComponent implements OnInit {
   
   constructor(private cartService: CartService, private formBuilder: FormBuilder) { }
 
-  onSubmit(): void{
-    //Procesar datos de pago aquí
-    this.items = this.cartService.clearCart();
-    console.warn('Your has been submitted', this.checkoutForm.value);
-    this.checkoutForm.reset();
-  }
+  // onSubmit(): void{
+  //   //Procesar datos de pago aquí
+  //   this.items = this.cartService.clearCart();
+  //   console.warn('Your has been submitted', this.checkoutForm.value);
+  //   this.checkoutForm.reset();
+  // }
 
   ngOnInit(): void {    
   }

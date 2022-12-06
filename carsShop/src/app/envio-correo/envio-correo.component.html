@@ -1,0 +1,32 @@
+<h2>Formulario De Envio</h2>
+
+<form [formGroup]="datos">
+    <div class="row justify-content-center">
+        <div>
+            <h4 class="text-center">Enviar Correo</h4>
+            <input class="form-control" type="text" placeholder="nombre" formControlName="nombre">
+            <input class="form-control" type="email" placeholder="email" formControlName="email">
+            <div class="text-center">
+                <button type="btn btn-info" (click)="envio">Enviar</button>
+            </div>            
+        </div>        
+    </div>
+</form>
+
+
+<!-- <div class="container">
+    <form >
+        <div>
+            <label for="name">
+                <input id="name" type="text" formControlName="name" placeholder="Name">
+            </label>
+        </div>
+        <div>
+            <label for="email">
+                <input type="email" id="email" formControlName="name" placeholder="email">
+            </label>
+        </div>
+        <button class="button" type="submit">Purchese</button>
+        <button class="button" type="submit" [routerLink]="['/enviocorreo']">atras</button>
+    </form>
+</div> -->
