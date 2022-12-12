@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CartService } from '../cart.service';
+import * as Notiflix from 'notiflix';
 
 @Component({
   selector: 'app-envio-correo',
@@ -24,20 +25,23 @@ export class EnvioCorreoComponent {
 
   datos: FormGroup;
 
-  constructor(private httpClient: HttpClient, private cartServices: CartService) {
+  constructor(private httpClient:HttpClient, private cartServices: CartService) {
     this.datos = new FormGroup({
       nombre: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email])
     })
   }
-  envio() {
+  envio(){
+    Notiflix.Loading.standard('Cargando...');
     let params = {
-      nombre: this.datos.value.nombre,
-      email: this.datos.value.email
+      nombre:this.datos.value.nombre,
+      email:this.datos.value.email
     }
     // console.log(params);
     this.httpClient.post('http://localhost:3000/envio', params).subscribe(resp => {
       console.log(resp);
+      Notiflix.Loading.remove();
+      Notiflix.Notify.success('Enviado Correctamente');
     })
   }
   // onSubmit(): void{
